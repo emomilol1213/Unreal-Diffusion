@@ -6,7 +6,7 @@
 [![discord badge]][discord link]
 
 [discord badge]: https://flat.badgen.net/discord/members/wg67wbA3aA?icon=discord
-[discord link]: https://discord.gg/wg67wbA3aA/
+[discord link]: https://discord.gg/wg67wbA3aA
 </div>
 
 This is a fork of
@@ -14,7 +14,7 @@ This is a fork of
 a popular SD implementation with great features and GUI. It provides a streamlined
 GUI inside Unreal Engine to easily generate game-ready textures. 
 
-**Quick links**: [<a href="https://discord.gg/wg67wbA3aA/">Discord Server</a>]
+**Quick links**: [<a href="https://discord.gg/wg67wbA3aA">Discord Server</a>]
 
 
 ## Table of Contents
