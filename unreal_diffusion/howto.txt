@@ -1,1 +1,0 @@
-Copy this folder to your unreal engine project content folder
