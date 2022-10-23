@@ -1,0 +1,1253 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="mauwii">
+      
+      
+        <link rel="canonical" href="https://invoke-ai.github.io/InvokeAI/CHANGELOG/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Changelog - Stable Diffusion Toolkit Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Stable Diffusion Toolkit Docs" class="md-header__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stable Diffusion Toolkit Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Stable Diffusion Toolkit Docs" class="md-nav__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stable Diffusion Toolkit Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Changelog
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v201-13-october-2022" class="md-nav__link">
+    v2.0.1 (13 October 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200-9-october-2022" class="md-nav__link">
+    v2.0.0 (9 October 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v114-11-september-2022" class="md-nav__link">
+    v1.14 (11 September 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-3-september-2022" class="md-nav__link">
+    v1.13 (3 September 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v112-28-august-2022" class="md-nav__link">
+    v1.12 (28 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v111-26-august-2022" class="md-nav__link">
+    v1.11 (26 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-25-august-2022" class="md-nav__link">
+    v1.10 (25 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v109-24-august-2022" class="md-nav__link">
+    v1.09 (24 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v108-24-august-2022" class="md-nav__link">
+    v1.08 (24 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v107-23-august-2022" class="md-nav__link">
+    v1.07 (23 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v106-23-august-2022" class="md-nav__link">
+    v1.06 (23 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v105-22-august-2022-after-the-drop" class="md-nav__link">
+    v1.05 (22 August 2022 - after the drop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v104-22-august-2022-after-the-drop" class="md-nav__link">
+    v1.04 (22 August 2022 - after the drop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v103-22-august-2022" class="md-nav__link">
+    v1.03 (22 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v102-21-august-2022" class="md-nav__link">
+    v1.02 (21 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v101-21-august-2022" class="md-nav__link">
+    v1.01 (21 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/CLI/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/EMBIGGEN/" class="md-nav__link">
+        Embiggen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/IMG2IMG/" class="md-nav__link">
+        Image-to-Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/INPAINTING/" class="md-nav__link">
+        Inpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/OTHER/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/OUTPAINTING/" class="md-nav__link">
+        Outpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/POSTPROCESS/" class="md-nav__link">
+        Postprocessing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/PROMPTS/" class="md-nav__link">
+        Prompting-Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/TEXTUAL_INVERSION/" class="md-nav__link">
+        Textual-Inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/VARIATIONS/" class="md-nav__link">
+        Variations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/WEB/" class="md-nav__link">
+        InvokeAI Web Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SAMPLER_CONVERGENCE/" class="md-nav__link">
+        Sampler Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/TROUBLESHOOT/" class="md-nav__link">
+        F.A.Q.
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/INSTALL_DOCKER/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/INSTALL_LINUX/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/INSTALL_MAC/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/INSTALL_WINDOWS/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/README-CompViz/" class="md-nav__link">
+        CompViz-Readme
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v201-13-october-2022" class="md-nav__link">
+    v2.0.1 (13 October 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200-9-october-2022" class="md-nav__link">
+    v2.0.0 (9 October 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v114-11-september-2022" class="md-nav__link">
+    v1.14 (11 September 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-3-september-2022" class="md-nav__link">
+    v1.13 (3 September 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v112-28-august-2022" class="md-nav__link">
+    v1.12 (28 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v111-26-august-2022" class="md-nav__link">
+    v1.11 (26 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-25-august-2022" class="md-nav__link">
+    v1.10 (25 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v109-24-august-2022" class="md-nav__link">
+    v1.09 (24 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v108-24-august-2022" class="md-nav__link">
+    v1.08 (24 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v107-23-august-2022" class="md-nav__link">
+    v1.07 (23 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v106-23-august-2022" class="md-nav__link">
+    v1.06 (23 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v105-22-august-2022-after-the-drop" class="md-nav__link">
+    v1.05 (22 August 2022 - after the drop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v104-22-august-2022-after-the-drop" class="md-nav__link">
+    v1.04 (22 August 2022 - after the drop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v103-22-august-2022" class="md-nav__link">
+    v1.03 (22 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v102-21-august-2022" class="md-nav__link">
+    v1.02 (21 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v101-21-august-2022" class="md-nav__link">
+    v1.01 (21 August 2022)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/CHANGELOG.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 12h8v2H8v-2m2 8H6V4h7v5h5v3.1l2-2V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4v-2m-2-2h4.1l.9-.9V16H8v2m12.2-5c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+  </a>
+
+
+<h1 id="changelog"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 8.25a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4A.75.75 0 0 1 5 8.25zM4 10.5A.75.75 0 0 0 4 12h4a.75.75 0 0 0 0-1.5H4z"/><path fill-rule="evenodd" d="M13-.005H3a3 3 0 0 0-3 3c0 .676.224 1.254.603 1.722.526.65 1.331.783 1.907.783h1.177c-.364.662-.814 1.339-1.287 2.048-.205.309-.414.624-.623.946C.891 9.865 0 11.418 0 13a3 3 0 0 0 3 3h10a3 3 0 0 0 1.667-5.494.75.75 0 0 0-.834 1.246A1.5 1.5 0 1 1 11.5 13c0-.642.225-1.347.623-2.136.397-.787.933-1.593 1.501-2.446l.011-.017c.554-.83 1.139-1.709 1.582-2.588.445-.885.783-1.836.783-2.818 0-1.672-1.346-3-3-3zm-10 1.5a1.5 1.5 0 0 0-1.5 1.5c0 .321.1.569.27.778.097.12.325.227.74.227h7.674A2.737 2.737 0 0 1 10 2.995c0-.546.146-1.059.401-1.5H3zm10 0c.831 0 1.5.662 1.5 1.5 0 .646-.225 1.353-.623 2.143-.398.79-.933 1.595-1.501 2.448l-.017.026c-.552.828-1.134 1.702-1.575 2.576C10.338 11.072 10 12.021 10 13c0 .546.146 1.059.401 1.5H3A1.5 1.5 0 0 1 1.5 13c0-1.084.63-2.289 1.537-3.692.177-.274.366-.556.558-.845.632-.948 1.306-1.96 1.773-2.963h6.382a.75.75 0 0 0 .417-1.373c-.444-.298-.667-.656-.667-1.132a1.5 1.5 0 0 1 1.5-1.5z"/></svg></span> <strong>Changelog</strong><a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
+<h2 id="v201-13-october-2022">v2.0.1 (13 October 2022)<a class="headerlink" href="#v201-13-october-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>fix noisy images at high step count when using k* samplers</li>
+<li>dream.py script now calls invoke.py module directly rather than
+    via a new python process (which could break the environment)</li>
+</ul>
+<h2 id="v200-9-october-2022">v2.0.0 <small>(9 October 2022)</small><a class="headerlink" href="#v200-9-october-2022" title="Permanent link">#</a></h2>
+<ul>
+<li><code>dream.py</code> script renamed <code>invoke.py</code>. A <code>dream.py</code> script wrapper remains
+    for backward compatibility.</li>
+<li>Completely new WebGUI - launch with <code>python3 scripts/invoke.py --web</code></li>
+<li>Support for <a href="../features/INPAINTING/">inpainting</a> and <a href="../features/OUTPAINTING/">outpainting</a></li>
+<li>img2img runs on all k* samplers</li>
+<li>Support for <a href="../features/PROMPTS/#negative-and-unconditioned-prompts">negative prompts</a></li>
+<li>Support for CodeFormer face reconstruction</li>
+<li>Support for Textual Inversion on Macintoshes</li>
+<li>Support in both WebGUI and CLI for <a href="../features/POSTPROCESS/">post-processing of previously-generated images</a>
+    using facial reconstruction, ESRGAN upscaling, outcropping (similar to DALL-E infinite canvas),
+    and "embiggen" upscaling. See the <code>!fix</code> command.</li>
+<li>New <code>--hires</code> option on <code>invoke&gt;</code> line allows <a href="../features/CLI/#this-is-an-example-of-txt2img">larger images to be created without duplicating elements</a>, at the cost of some performance.</li>
+<li>New <code>--perlin</code> and <code>--threshold</code> options allow you to add and control variation
+    during image generation (see <a href="../features/OTHER/#thresholding-and-perlin-noise-initialization-options">Thresholding and Perlin Noise Initialization</a>)</li>
+<li>Extensive metadata now written into PNG files, allowing reliable regeneration of images
+    and tweaking of previous settings.</li>
+<li>Command-line completion in <code>invoke.py</code> now works on Windows, Linux and Mac platforms.</li>
+<li>Improved <a href="../features/CLI/">command-line completion behavior</a>
+    New commands added:</li>
+<li>List command-line history with <code>!history</code></li>
+<li>Search command-line history with <code>!search</code></li>
+<li>Clear history with <code>!clear</code></li>
+<li>Deprecated <code>--full_precision</code> / <code>-F</code>. Simply omit it and <code>invoke.py</code> will auto
+    configure. To switch away from auto use the new flag like <code>--precision=float32</code>.</li>
+</ul>
+<h2 id="v114-11-september-2022">v1.14 <small>(11 September 2022)</small><a class="headerlink" href="#v114-11-september-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Memory optimizations for small-RAM cards. 512x512 now possible on 4 GB GPUs.</li>
+<li>Full support for Apple hardware with M1 or M2 chips.</li>
+<li>Add "seamless mode" for circular tiling of image. Generates beautiful effects.
+    (<a href="https://github.com/prixt">prixt</a>).</li>
+<li>Inpainting support.</li>
+<li>Improved web server GUI.</li>
+<li>Lots of code and documentation cleanups.</li>
+</ul>
+<h2 id="v113-3-september-2022">v1.13 <small>(3 September 2022)</small><a class="headerlink" href="#v113-3-september-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Support image variations (see <a href="../features/VARIATIONS/">VARIATIONS</a>
+    (<a href="https://github.com/bakkot">Kevin Gibbons</a> and many contributors and reviewers)</li>
+<li>Supports a Google Colab notebook for a standalone server running on Google hardware
+    <a href="https://github.com/artmen1516">Arturo Mendivil</a></li>
+<li>WebUI supports GFPGAN/ESRGAN facial reconstruction and upscaling
+    <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
+<li>WebUI supports incremental display of in-progress images during generation
+    <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
+<li>A new configuration file scheme that allows new models (including upcoming
+    stable-diffusion-v1.5) to be added without altering the code.
+    (<a href="https://github.com/maddavid12">David Wager</a>)</li>
+<li>Can specify --grid on invoke.py command line as the default.</li>
+<li>Miscellaneous internal bug and stability fixes.</li>
+<li>Works on M1 Apple hardware.</li>
+<li>Multiple bug fixes.</li>
+</ul>
+<hr />
+<h2 id="v112-28-august-2022">v1.12 <small>(28 August 2022)</small><a class="headerlink" href="#v112-28-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Improved file handling, including ability to read prompts from standard input.
+  (kudos to <a href="https://github.com/yunsaki">Yunsaki</a></li>
+<li>The web server is now integrated with the invoke.py script. Invoke by adding --web to
+  the invoke.py command arguments.</li>
+<li>Face restoration and upscaling via GFPGAN and Real-ESGAN are now automatically
+  enabled if the GFPGAN directory is located as a sibling to Stable Diffusion.
+  VRAM requirements are modestly reduced. Thanks to both <a href="https://github.com/blessedcoolant">Blessedcoolant</a> and
+  <a href="https://github.com/oceanswave">Oceanswave</a> for their work on this.</li>
+<li>You can now swap samplers on the invoke&gt; command line. <a href="https://github.com/blessedcoolant">Blessedcoolant</a></li>
+</ul>
+<hr />
+<h2 id="v111-26-august-2022">v1.11 <small>(26 August 2022)</small><a class="headerlink" href="#v111-26-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>NEW FEATURE: Support upscaling and face enhancement using the GFPGAN module. (kudos to <a href="https://github.com/Oceanswave">Oceanswave</a></li>
+<li>You now can specify a seed of -1 to use the previous image's seed, -2 to use the seed for the image generated before that, etc.
+  Seed memory only extends back to the previous command, but will work on all images generated with the -n# switch.</li>
+<li>Variant generation support temporarily disabled pending more general solution.</li>
+<li>Created a feature branch named <strong>yunsaki-morphing-invoke</strong> which adds experimental support for
+  iteratively modifying the prompt and its parameters. Please see<a href="https://github.com/lstein/stable-diffusion/pull/86">Pull Request #86</a>
+  for a synopsis of how this works. Note that when this feature is eventually added to the main branch, it will may be modified
+  significantly.</li>
+</ul>
+<hr />
+<h2 id="v110-25-august-2022">v1.10 <small>(25 August 2022)</small><a class="headerlink" href="#v110-25-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>A barebones but fully functional interactive web server for online generation of txt2img and img2img.</li>
+</ul>
+<hr />
+<h2 id="v109-24-august-2022">v1.09 <small>(24 August 2022)</small><a class="headerlink" href="#v109-24-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>A new -v option allows you to generate multiple variants of an initial image
+  in img2img mode. (kudos to <a href="https://github.com/Oceanswave">Oceanswave</a>. <a href="https://github.com/lstein/stable-diffusion/pull/71#issuecomment-1226700810">
+  See this discussion in the PR for examples and details on use</a>)</li>
+<li>Added ability to personalize text to image generation (kudos to <a href="https://github.com/Oceanswave">Oceanswave</a> and <a href="https://github.com/nicolai256">nicolai256</a>)</li>
+<li>Enabled all of the samplers from k_diffusion</li>
+</ul>
+<hr />
+<h2 id="v108-24-august-2022">v1.08 <small>(24 August 2022)</small><a class="headerlink" href="#v108-24-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Escape single quotes on the invoke&gt; command before trying to parse. This avoids
+  parse errors.</li>
+<li>Removed instruction to get Python3.8 as first step in Windows install.
+  Anaconda3 does it for you.</li>
+<li>Added bounds checks for numeric arguments that could cause crashes.</li>
+<li>Cleaned up the copyright and license agreement files.</li>
+</ul>
+<hr />
+<h2 id="v107-23-august-2022">v1.07 <small>(23 August 2022)</small><a class="headerlink" href="#v107-23-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Image filenames will now never fill gaps in the sequence, but will be assigned the
+  next higher name in the chosen directory. This ensures that the alphabetic and chronological
+  sort orders are the same.</li>
+</ul>
+<hr />
+<h2 id="v106-23-august-2022">v1.06 <small>(23 August 2022)</small><a class="headerlink" href="#v106-23-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>Added weighted prompt support contributed by <a href="https://github.com/xraxra">xraxra</a></li>
+<li>Example of using weighted prompts to tweak a demonic figure contributed by <a href="https://github.com/bmaltais">bmaltais</a></li>
+</ul>
+<hr />
+<h2 id="v105-22-august-2022-after-the-drop">v1.05 <small>(22 August 2022 - after the drop)</small><a class="headerlink" href="#v105-22-august-2022-after-the-drop" title="Permanent link">#</a></h2>
+<ul>
+<li>Filenames now use the following formats:
+  000010.95183149.png -- Two files produced by the same command (e.g. -n2),
+  000010.26742632.png -- distinguished by a different seed.</li>
+</ul>
+<p>000011.455191342.01.png -- Two files produced by the same command using
+  000011.455191342.02.png -- a batch size&gt;1 (e.g. -b2). They have the same seed.</p>
+<p><a class="magiclink magiclink-github magiclink-issue" href="https://github.com/invoke-ai/000011.4160627868.grid/issues/1" title="GitHub Issue: invoke-ai/000011.4160627868.grid #1">000011.4160627868.grid#1</a>-4.png -- a grid of four images (-g); the whole grid can
+  be regenerated with the indicated key</p>
+<ul>
+<li>It should no longer be possible for one image to overwrite another</li>
+<li>You can use the "cd" and "pwd" commands at the invoke&gt; prompt to set and retrieve
+  the path of the output directory.</li>
+</ul>
+<hr />
+<h2 id="v104-22-august-2022-after-the-drop">v1.04 <small>(22 August 2022 - after the drop)</small><a class="headerlink" href="#v104-22-august-2022-after-the-drop" title="Permanent link">#</a></h2>
+<ul>
+<li>Updated README to reflect installation of the released weights.</li>
+<li>Suppressed very noisy and inconsequential warning when loading the frozen CLIP
+  tokenizer.</li>
+</ul>
+<hr />
+<h2 id="v103-22-august-2022">v1.03 <small>(22 August 2022)</small><a class="headerlink" href="#v103-22-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>The original txt2img and img2img scripts from the CompViz repository have been moved into
+  a subfolder named "orig_scripts", to reduce confusion.</li>
+</ul>
+<hr />
+<h2 id="v102-21-august-2022">v1.02 <small>(21 August 2022)</small><a class="headerlink" href="#v102-21-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>A copy of the prompt and all of its switches and options is now stored in the corresponding
+  image in a tEXt metadata field named "Dream". You can read the prompt using scripts/images2prompt.py,
+  or an image editor that allows you to explore the full metadata.
+  <strong>Please run "conda env update" to load the k_lms dependencies!!</strong></li>
+</ul>
+<hr />
+<h2 id="v101-21-august-2022">v1.01 <small>(21 August 2022)</small><a class="headerlink" href="#v101-21-august-2022" title="Permanent link">#</a></h2>
+<ul>
+<li>added k_lms sampling.
+  <strong>Please run "conda env update" to load the k_lms dependencies!!</strong></li>
+<li>use half precision arithmetic by default, resulting in faster execution and lower memory requirements
+  Pass argument --full_precision to invoke.py to get slower but more accurate image generation</li>
+</ul>
+<hr />
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
+<ul>
+<li><strong><a href="..">Read Me</a></strong></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2022</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../features/CLI/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CLI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Lincoln D. Stein <lincoln.stein@gmail.com>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>

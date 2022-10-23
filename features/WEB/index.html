@@ -1,0 +1,1173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="mauwii">
+      
+      
+        <link rel="canonical" href="https://invoke-ai.github.io/InvokeAI/features/WEB/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>InvokeAI Web Server - Stable Diffusion Toolkit Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#invokeai-web-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Stable Diffusion Toolkit Docs" class="md-header__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stable Diffusion Toolkit Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              InvokeAI Web Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stable Diffusion Toolkit Docs" class="md-nav__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stable Diffusion Toolkit Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EMBIGGEN/" class="md-nav__link">
+        Embiggen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMG2IMG/" class="md-nav__link">
+        Image-to-Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INPAINTING/" class="md-nav__link">
+        Inpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OTHER/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUTPAINTING/" class="md-nav__link">
+        Outpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../POSTPROCESS/" class="md-nav__link">
+        Postprocessing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROMPTS/" class="md-nav__link">
+        Prompting-Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TEXTUAL_INVERSION/" class="md-nav__link">
+        Textual-Inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VARIATIONS/" class="md-nav__link">
+        Variations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        InvokeAI Web Server
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/SAMPLER_CONVERGENCE/" class="md-nav__link">
+        Sampler Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/TROUBLESHOOT/" class="md-nav__link">
+        F.A.Q.
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/INSTALL_DOCKER/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/INSTALL_LINUX/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/INSTALL_MAC/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/INSTALL_WINDOWS/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/README-CompViz/" class="md-nav__link">
+        CompViz-Readme
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/features/WEB.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 12h8v2H8v-2m2 8H6V4h7v5h5v3.1l2-2V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4v-2m-2-2h4.1l.9-.9V16H8v2m12.2-5c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+  </a>
+
+
+<h1 id="invokeai-web-server"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> InvokeAI Web Server<a class="headerlink" href="#invokeai-web-server" title="Permanent link">#</a></h1>
+<p>As of version 2.0.0, this distribution comes with a full-featured web
+server (see screenshot). To use it, run the <code>invoke.py</code> script by
+adding the <code>--web</code> option:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">(</span>invokeai<span class="o">)</span> ~/InvokeAI$ python3 scripts/invoke.py --web
+</code></pre></div>
+<p>You can then connect to the server by pointing your web browser at
+<a href="http://localhost:9090">http://localhost:9090</a>. To reach the server from a different machine on
+your LAN, you may launch the web server with the <code>--host</code> argument and
+either the IP address of the host you are running it on, or the
+wildcard <code>0.0.0.0</code>. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">(</span>invokeai<span class="o">)</span> ~/InvokeAI$ python3 scripts/invoke.py --web --host <span class="m">0</span>.0.0.0
+</code></pre></div>
+<h1 id="quick-guided-walkthrough-of-the-webguis-features">Quick guided walkthrough of the WebGUI's features<a class="headerlink" href="#quick-guided-walkthrough-of-the-webguis-features" title="Permanent link">#</a></h1>
+<p>While most of the WebGUI's features are intuitive, here is a guided
+walkthrough through its various components.</p>
+<p><img alt="Invoke Web Server - Major Components" src="../../assets/invoke-web-server-1.png" width="640px" /></p>
+<p>The screenshot above shows the Text to Image tab of the WebGUI. There
+are three main sections:</p>
+<ol>
+<li>
+<p>A <strong>control panel</strong> on the left, which contains various settings
+for text to image generation. The most important part is the text
+field (currently showing <code>strawberry sushi</code>) for entering the text
+prompt, and the camera icon directly underneath that will render the
+image. We'll call this the <em>Invoke</em> button from now on.</p>
+</li>
+<li>
+<p>The <strong>current image</strong> section in the middle, which shows a large
+format version of the image you are currently working on. A series of
+buttons at the top ("image to image", "Use All", "Use Seed", etc) lets
+you modify the image in various ways.</p>
+</li>
+<li>
+<p>A **gallery* section on the left that contains a history of the
+images you have generated. These images are read and written to the
+directory specified at launch time in <code>--outdir</code>.</p>
+</li>
+</ol>
+<p>In addition to these three elements, there are a series of icons for
+changing global settings, reporting bugs, and changing the theme on
+the upper right.</p>
+<p>There are also a series of icons to the left of the control panel (see
+highlighted area in the screenshot below) which select among a series
+of tabs for performing different types of operations.</p>
+<figure>
+<p><img alt="Invoke Web Server - Control Panel" src="../../assets/invoke-web-server-2.png" width="512px" /></p>
+</figure>
+<p>From top to bottom, these are:</p>
+<ol>
+<li>Text to Image  - generate images from text</li>
+<li>Image to Image - from an uploaded starting image (drawing or photograph) generate a new one, modified by the text prompt</li>
+<li>Inpainting (pending) - Interactively erase portions of a starting image and have the AI fill in the erased region from a text prompt.</li>
+<li>Outpainting (pending) - Interactively add blank space to the borders of a starting image and fill in the background from a text prompt.</li>
+<li>Postprocessing (pending) - Interactively postprocess generated images using a variety of filters.</li>
+</ol>
+<p>The inpainting, outpainting and postprocessing tabs are currently in
+development. However, limited versions of their features can already
+be accessed through the Text to Image and Image to Image tabs.</p>
+<h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">#</a></h2>
+<p>The following walkthrough will exercise most (but not all) of the
+WebGUI's feature set.</p>
+<h3 id="text-to-image">Text to Image<a class="headerlink" href="#text-to-image" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>Launch the WebGUI using <code>python scripts/invoke.py --web</code> and
+connect to it with your browser by accessing
+<code>http://localhost:9090</code>. If the browser and server are running on
+different machines on your LAN, add the option <code>--host 0.0.0.0</code> to the
+launch command line and connect to the machine hosting the web server
+using its IP address or domain name.</p>
+</li>
+<li>
+<p>If all goes well, the WebGUI should come up and you'll see a green
+<code>connected</code> message on the upper right.</p>
+</li>
+</ol>
+<h4 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Generate an image by typing <em>strawberry sushi</em> into the large
+prompt field on the upper left and then clicking on the Invoke button
+(the one with the Camera icon). After a short wait, you'll see a large
+image of sushi in the image panel, and a new thumbnail in the gallery
+on the right.</p>
+<p>If you need more room on the screen, you can turn the gallery  off
+by clicking on the <strong>x</strong> to the right of "Your Invocations". You can
+turn it back on later by clicking the image icon that appears in the
+gallery's place.</p>
+<p>The images are written into the directory indicated by the <code>--outdir</code>
+option provided at script launch time. By default, this is
+<code>outputs/img-samples</code> under the InvokeAI directory.</p>
+</li>
+<li>
+<p>Generate a bunch of strawberry sushi images by increasing the
+number of requested images by adjusting the Images counter just below
+the Camera button. As each is generated, it will be added to the
+gallery. You can switch the active image by clicking on the gallery
+thumbnails.</p>
+</li>
+<li>
+<p>Try playing with different settings, including image width and
+height, the Sampler, the Steps and the CFG scale.</p>
+<p>Image <em>Width</em> and <em>Height</em> do what you'd expect. However, be aware that
+larger images consume more VRAM memory and take longer to generate.</p>
+<p>The <em>Sampler</em> controls how the AI selects the image to display. Some
+samplers are more "creative" than others and will produce a wider
+range of variations (see next section). Some samplers run faster than
+others.</p>
+<p><em>Steps</em> controls how many noising/denoising/sampling steps the AI will
+take. The higher this value, the more refined the image will be, but
+the longer the image will take to generate. A typical strategy is to
+generate images with a low number of steps in order to select one to
+work on further, and then regenerate it using a higher number of
+steps.</p>
+<p>The <em>CFG Scale</em> controls how hard the AI tries to match the generated
+image to the input prompt. You can go as high or low as you like, but
+generally values greater than 20 won't improve things much, and values
+lower than 5 will produce unexpected images. There are complex
+interactions between <em>Steps</em>, <em>CFG Scale</em> and the <em>Sampler</em>, so
+experiment to find out what works for you.</p>
+</li>
+<li>
+<p>To regenerate a previously-generated image, select the image you
+want and click <em>Use All</em>. This loads the text prompt and other
+original settings into the control panel. If you then press <em>Invoke</em>
+it will regenerate the image exactly. You can also selectively modify
+the prompt or other settings to tweak the image.</p>
+<p>Alternatively, you may click on <em>Use Seed</em> to load just the image's
+seed, and leave other settings unchanged.</p>
+</li>
+<li>
+<p>To regenerate a Stable Diffusion image that was generated by
+another SD package, you need to know its text prompt and its
+<em>Seed</em>. Copy-paste the prompt into the prompt box, unset the
+<em>Randomize Seed</em> control in the control panel, and copy-paste the
+desired <em>Seed</em> into its text field. When you Invoke, you will get
+something similar to the original image. It will not be exact unless
+you also set the correct values for the original sampler, CFG,
+steps and dimensions, but it will (usually) be close.</p>
+</li>
+</ol>
+<h4 id="variations-on-a-theme">Variations on a theme<a class="headerlink" href="#variations-on-a-theme" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Let's try generating some variations. Select your favorite sushi
+image from the gallery to load it. Then select "Use All" from the list
+of buttons above. This will load up all the settings used to generate
+this image, including its unique seed.</p>
+<p>Go down to the Variations section of the Control Panel and set the
+button to On. Set Variation Amount to 0.2 to generate a modest
+number of variations on the image, and also set the Image counter to
+<code>4</code>. Press the <code>invoke</code> button. This will generate a series of related
+images. To obtain smaller variations, just lower the Variation
+Amount. You may also experiment with changing the Sampler. Some
+samplers generate more variability than others. <em>k_euler_a</em> is
+particularly creative, while <em>ddim</em> is pretty conservative.</p>
+</li>
+<li>
+<p>For even more variations, experiment with increasing the setting
+for <em>Perlin</em>. This adds a bit of noise to the image generation
+process. Note that values of Perlin noise greater than 0.15 produce
+poor images for several of the samplers.</p>
+</li>
+</ol>
+<h4 id="facial-reconstruction-and-upscaling">Facial reconstruction and upscaling<a class="headerlink" href="#facial-reconstruction-and-upscaling" title="Permanent link">#</a></h4>
+<p>Stable Diffusion frequently produces mangled faces, particularly when
+there are multiple figures in the same scene. Stable Diffusion has
+particular issues with generating reallistic eyes. InvokeAI provides
+the ability to reconstruct faces using either the GFPGAN or CodeFormer
+libraries. For more information see <a href="../POSTPROCESS/">POSTPROCESS</a>.</p>
+<ol>
+<li>
+<p>Invoke a prompt that generates a mangled face. A prompt that often
+gives this is "portrait of a lawyer, &frac34; shot" (this is not intended
+as a slur against lawyers!) Once you have an image that needs some
+touching up, load it into the Image panel, and press the button with
+the face icon (highlighted in the first screenshot below). A dialog
+box will appear. Leave <em>Strength</em> at 0.8 and press *Restore Faces". If
+all goes well, the eyes and other aspects of the face will be improved
+(see the second screenshot)</p>
+<p><img alt="Invoke Web Server - Original Image" src="../../assets/invoke-web-server-3.png" /></p>
+<p><img alt="Invoke Web Server - Retouched Image" src="../../assets/invoke-web-server-4.png" /></p>
+<p>The facial reconstruction <em>Strength</em> field adjusts how aggressively
+the face library will try to alter the face. It can be as high as 1.0,
+but be aware that this often softens the face airbrush style, losing
+some details. The default 0.8 is usually sufficient.</p>
+</li>
+<li>
+<p>"Upscaling" is the process of increasing the size of an image while
+retaining the sharpness. InvokeAI uses an external library called
+"ESRGAN" to do this. To invoke upscaling, simply select an image and
+press the <em>HD</em> button above it. You can select between 2X and 4X
+upscaling, and adjust the upscaling strength, which has much the same
+meaning as in facial reconstruction. Try running this on one of your
+previously-generated images.</p>
+</li>
+<li>
+<p>Finally, you can run facial reconstruction and/or upscaling
+automatically after each Invocation. Go to the Advanced Options
+section of the Control Panel and turn on <em>Restore Face</em> and/or
+<em>Upscale</em>.</p>
+</li>
+</ol>
+<h3 id="image-to-image">Image to Image<a class="headerlink" href="#image-to-image" title="Permanent link">#</a></h3>
+<p>InvokeAI lets you take an existing image and use it as the basis for a
+new creation. You can use any sort of image, including a photograph, a
+scanned sketch, or a digital drawing, as long as it is in PNG or JPEG
+format.</p>
+<p>For this tutorial, we'll use files named
+<a href="../../assets/Lincoln-and-Parrot-512.png">Lincoln-and-Parrot-512.png</a>,
+and
+<a href="../../assets/Lincoln-and-Parrot-512-transparent.png">Lincoln-and-Parrot-512-transparent.png</a>.
+Download these images to your local machine now to continue with the walkthrough.</p>
+<ol>
+<li>
+<p>Click on the <em>Image to Image</em> tab icon, which is the second icon
+from the top on the left-hand side of the screen:</p>
+<p><figure markdown>
+<img alt="Invoke Web Server - Image to Image Icon" src="../../assets/invoke-web-server-5.png" />
+</figure></p>
+<p>This will bring you to a screen similar to the one shown here:</p>
+<p><figure markdown>
+<img alt="Invoke Web Server - Image to Image Tab" src="../../assets/invoke-web-server-6.png" width="640px" />
+</figure></p>
+</li>
+<li>
+<p>Drag-and-drop the Lincoln-and-Parrot image into the Image panel, or
+click the blank area to get an upload dialog. The image will load into
+an area marked <em>Initial Image</em>. (The WebGUI will also load the most
+recently-generated image from the gallery into a section on the left,
+but this image will be replaced in the next step.)</p>
+</li>
+<li>
+<p>Go to the prompt box and type <em>old sea captain with raven on
+shoulder</em> and press Invoke. A derived image will appear to the right
+of the original one:</p>
+<p><img alt="Invoke Web Server - Image to Image example" src="../../assets/invoke-web-server-7.png" width="640px" /></p>
+</li>
+<li>
+<p>Experiment with the different settings. The most influential one
+in Image to Image is <em>Image to Image Strength</em> located about midway
+down the control panel. By default it is set to 0.75, but can range
+from 0.0 to 0.99. The higher the value, the more of the original image
+the AI will replace. A value of 0 will leave the initial image
+completely unchanged, while 0.99 will replace it completely. However,
+the Sampler and CFG Scale also influence the final result. You can
+also generate variations in the same way as described in Text to
+Image.</p>
+</li>
+<li>
+<p>What if we only want to change certain part(s) of the image and
+leave the rest intact? This is called Inpainting, and a future version
+of the InvokeAI web server will provide an interactive painting canvas
+on which you can directly draw the areas you wish to Inpaint into. For
+now, you can achieve this effect by using an external photoeditor tool
+to make one or more regions of the image transparent as described in
+[INPAINTING.md] and uploading that.</p>
+<p>The file
+<a href="../../assets/Lincoln-and-Parrot-512-transparent.png">Lincoln-and-Parrot-512-transparent.png</a>
+is a version of the earlier image in which the area around the parrot
+has been replaced with transparency. Click on the "x" in the upper
+right of the Initial Image and upload the transparent version. Using
+the same prompt "old sea captain with raven on shoulder" try Invoking
+an image. This time, only the parrot will be replaced, leaving the
+rest of the original image intact:</p>
+</li>
+</ol>
+<figure>
+<p><img alt="Invoke Web Server - Inpainting" src="../../assets/invoke-web-server-8.png" width="640px" /></p>
+</figure>
+<ol>
+<li>Would you like to modify a previously-generated image using the
+Image to Image facility? Easy! While in the Image to Image panel,
+hover over any of the gallery images to see a little menu of icons pop
+up.  Click the picture icon to instantly send the selected image to
+Image to Image as the initial image.</li>
+</ol>
+<p>You can do the same from the Text to Image tab by clicking on the
+picture icon above the central image panel. The screenshot below
+shows where the "use as initial image" icons are located.</p>
+<p><img alt="Invoke Web Server - Use as Image Links" src="../../assets/invoke-web-server-9.png" width="640px" /></p>
+<h2 id="parting-remarks">Parting remarks<a class="headerlink" href="#parting-remarks" title="Permanent link">#</a></h2>
+<p>This concludes the walkthrough, but there are several more features that you
+can explore. Please check out the <a href="../CLI/">Command Line Interface</a>
+documentation for further explanation of the advanced features that
+were not covered here.</p>
+<p>The WebGUI is only rapid development. Check back regularly for
+updates!</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h2>
+<h3 id="additional-options">Additional Options<a class="headerlink" href="#additional-options" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>parameter <img width=160 align="right"></th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--web_develop</code></td>
+<td>Starts the web server in development mode.</td>
+</tr>
+<tr>
+<td><code>--web_verbose</code></td>
+<td>Enables verbose logging</td>
+</tr>
+<tr>
+<td><code>--cors [CORS ...]</code></td>
+<td>Additional allowed origins, comma-separated</td>
+</tr>
+<tr>
+<td><code>--host HOST</code></td>
+<td>Web server: Host or IP to listen on. Set to 0.0.0.0 to accept traffic from other devices on your network.</td>
+</tr>
+<tr>
+<td><code>--port PORT</code></td>
+<td>Web server: Port to listen on</td>
+</tr>
+<tr>
+<td><code>--gui</code></td>
+<td>Start InvokeAI GUI - This is the "desktop mode" version of the web app. It uses Flask to create a desktop app experience of the webserver.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="web-specific-features">Web Specific Features<a class="headerlink" href="#web-specific-features" title="Permanent link">#</a></h3>
+<p>The web experience offers an incredibly easy-to-use experience for interacting with the InvokeAI toolkit. 
+For detailed guidance on individual features, see the Feature-specific help documents available in this directory.
+Note that the latest functionality available in the CLI may not always be available in the Web interface.</p>
+<h4 id="dark-mode-light-mode">Dark Mode &amp; Light Mode<a class="headerlink" href="#dark-mode-light-mode" title="Permanent link">#</a></h4>
+<p>The InvokeAI interface is available in a nano-carbon black &amp; purple Dark Mode, and a "burn your eyes out Nosferatu" Light Mode. These can be toggled by clicking the Sun/Moon icons at the top right of the interface. </p>
+<p><img alt="InvokeAI Web Server - Dark Mode" src="../../assets/invoke_web_dark.png" /></p>
+<p><img alt="InvokeAI Web Server - Light Mode" src="../../assets/invoke_web_light.png" /></p>
+<h4 id="invocation-toolbar">Invocation Toolbar<a class="headerlink" href="#invocation-toolbar" title="Permanent link">#</a></h4>
+<p>The left side of the InvokeAI interface is available for customizing the prompt and the settings used for invoking your new image. Typing your prompt into the open text field and clicking the Invoke button will produce the image based on the settings configured in the toolbar.</p>
+<p>See below for additional documentation related to each feature:</p>
+<ul>
+<li><a href="../CLI/">Core Prompt Settings</a></li>
+<li><a href="../VARIATIONS/">Variations</a></li>
+<li><a href="../POSTPROCESS/#upscaling">Upscaling</a></li>
+<li><a href="../IMG2IMG/">Image to Image</a></li>
+<li><a href="../INPAINTING/">Inpainting</a></li>
+<li><a href="../OTHER/">Other</a></li>
+</ul>
+<h4 id="invocation-gallery">Invocation Gallery<a class="headerlink" href="#invocation-gallery" title="Permanent link">#</a></h4>
+<p>The currently selected --outdir (or the default outputs folder) will display all previously generated files on load. As new invocations are generated, these will be dynamically added to the gallery, and can be previewed by selecting them. Each image also has a simple set of actions (e.g., Delete, Use Seed, Use All Parameters, etc.) that can be accessed by hovering over the image.</p>
+<h4 id="image-workspace">Image Workspace<a class="headerlink" href="#image-workspace" title="Permanent link">#</a></h4>
+<p>When an image from the Invocation Gallery is selected, or is generated, the image will be displayed within the center of the interface. A quickbar of common image interactions are displayed along the top of the image, including:</p>
+<ul>
+<li>Use image in the <code>Image to Image</code> workflow</li>
+<li>Initialize Face Restoration on the selected file</li>
+<li>Initialize Upscaling on the selected file</li>
+<li>View File metadata and details</li>
+<li>Delete the file</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">#</a></h2>
+<p>A huge shout-out to the core team working to make this vision a
+reality, including
+<a href="https://github.com/psychedelicious">psychedelicious</a>,
+<a href="https://github.com/Kyle0654">Kyle0654</a> and
+<a href="https://github.com/blessedcoolant">blessedcoolant</a>. <a href="https://github.com/hipsterusername">hipsterusername</a>
+was the team's unofficial cheerleader and added tooltips/docs.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 11, 2022</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 11, 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../VARIATIONS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Variations" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Variations
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../help/SAMPLER_CONVERGENCE/" class="md-footer__link md-footer__link--next" aria-label="Next: Sampler Convergence" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sampler Convergence
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Lincoln D. Stein <lincoln.stein@gmail.com>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>

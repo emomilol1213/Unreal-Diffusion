@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="mauwii">
+      
+      
+        <link rel="canonical" href="https://invoke-ai.github.io/InvokeAI/installation/INSTALL_MAC/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>macOS - Stable Diffusion Toolkit Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#macos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Stable Diffusion Toolkit Docs" class="md-header__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stable Diffusion Toolkit Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              macOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stable Diffusion Toolkit Docs" class="md-nav__button md-logo" aria-label="Stable Diffusion Toolkit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stable Diffusion Toolkit Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/invoke-ai/InvokeAI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    invoke-ai/InvokeAI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/CLI/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/EMBIGGEN/" class="md-nav__link">
+        Embiggen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/IMG2IMG/" class="md-nav__link">
+        Image-to-Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/INPAINTING/" class="md-nav__link">
+        Inpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/OTHER/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/OUTPAINTING/" class="md-nav__link">
+        Outpainting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/POSTPROCESS/" class="md-nav__link">
+        Postprocessing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/PROMPTS/" class="md-nav__link">
+        Prompting-Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/TEXTUAL_INVERSION/" class="md-nav__link">
+        Textual-Inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/VARIATIONS/" class="md-nav__link">
+        Variations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/WEB/" class="md-nav__link">
+        InvokeAI Web Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/SAMPLER_CONVERGENCE/" class="md-nav__link">
+        Sampler Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/TROUBLESHOOT/" class="md-nav__link">
+        F.A.Q.
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INSTALL_DOCKER/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INSTALL_LINUX/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          macOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        macOS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    Common problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Common problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-it-slow" class="md-nav__link">
+    Is it slow?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doesnt-work-anymore" class="md-nav__link">
+    Doesn't work anymore?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-module-named-cv2-torch-invokeai-transformers-taming-etc" class="md-nav__link">
+    "No module named cv2", torch, 'invokeai', 'transformers', 'taming', etc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snakes-are-living-in-your-computer" class="md-nav__link">
+    How many snakes are living in your computer?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oserror-cant-load-tokenizer-for-openaiclip-vit-large-patch14" class="md-nav__link">
+    OSError: Can't load tokenizer for 'openai/clip-vit-large-patch14'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-operator-name-is-not-current-implemented-for-the-mps-device-sic" class="md-nav__link">
+    "The operator [name] is not current implemented for the MPS device." (sic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#could-not-build-wheels-for-tokenizers" class="md-nav__link">
+    "Could not build wheels for tokenizers"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-come-seed-doesnt-work" class="md-nav__link">
+    How come --seed doesn't work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libiomp5dylib-error" class="md-nav__link">
+    libiomp5.dylib error?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-enough-memory" class="md-nav__link">
+    Not enough memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-product-of-dimension-sizes-231" class="md-nav__link">
+    "Error: product of dimension sizes &gt; 2**31'"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-just-got-rickrolled-do-i-have-a-virus" class="md-nav__link">
+    I just got Rickrolled! Do I have a virus?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-images-come-out-black" class="md-nav__link">
+    My images come out black
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-size-is-not-compatible-with-input-tensors-size-and-stride" class="md-nav__link">
+    "view size is not compatible with input tensor's size and stride"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-processor-must-support-the-intel-bla-bla-bla" class="md-nav__link">
+    The processor must support the Intel bla bla bla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-types-tensor2x1280xf32-and-tensorxf16-are-not-broadcast-compatible" class="md-nav__link">
+    input types 'tensor&lt;2x1280xf32&gt;' and 'tensor&lt;*xf16&gt;' are not broadcast compatible
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INSTALL_WINDOWS/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/README-CompViz/" class="md-nav__link">
+        CompViz-Readme
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    Common problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Common problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-it-slow" class="md-nav__link">
+    Is it slow?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doesnt-work-anymore" class="md-nav__link">
+    Doesn't work anymore?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-module-named-cv2-torch-invokeai-transformers-taming-etc" class="md-nav__link">
+    "No module named cv2", torch, 'invokeai', 'transformers', 'taming', etc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-many-snakes-are-living-in-your-computer" class="md-nav__link">
+    How many snakes are living in your computer?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oserror-cant-load-tokenizer-for-openaiclip-vit-large-patch14" class="md-nav__link">
+    OSError: Can't load tokenizer for 'openai/clip-vit-large-patch14'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-operator-name-is-not-current-implemented-for-the-mps-device-sic" class="md-nav__link">
+    "The operator [name] is not current implemented for the MPS device." (sic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#could-not-build-wheels-for-tokenizers" class="md-nav__link">
+    "Could not build wheels for tokenizers"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-come-seed-doesnt-work" class="md-nav__link">
+    How come --seed doesn't work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libiomp5dylib-error" class="md-nav__link">
+    libiomp5.dylib error?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-enough-memory" class="md-nav__link">
+    Not enough memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-product-of-dimension-sizes-231" class="md-nav__link">
+    "Error: product of dimension sizes &gt; 2**31'"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-just-got-rickrolled-do-i-have-a-virus" class="md-nav__link">
+    I just got Rickrolled! Do I have a virus?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-images-come-out-black" class="md-nav__link">
+    My images come out black
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-size-is-not-compatible-with-input-tensors-size-and-stride" class="md-nav__link">
+    "view size is not compatible with input tensor's size and stride"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-processor-must-support-the-intel-bla-bla-bla" class="md-nav__link">
+    The processor must support the Intel bla bla bla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-types-tensor2x1280xf32-and-tensorxf16-are-not-broadcast-compatible" class="md-nav__link">
+    input types 'tensor&lt;2x1280xf32&gt;' and 'tensor&lt;*xf16&gt;' are not broadcast compatible
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/installation/INSTALL_MAC.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 12h8v2H8v-2m2 8H6V4h7v5h5v3.1l2-2V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4v-2m-2-2h4.1l.9-.9V16H8v2m12.2-5c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+  </a>
+
+
+<h1 id="macos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span> macOS<a class="headerlink" href="#macos" title="Permanent link">#</a></h1>
+<p>Invoke AI runs quite well on M1 Macs and we have a number of M1 users
+in the community.</p>
+<p>While the repo does run on Intel Macs, we only have a couple
+reports. If you have an Intel Mac and run into issues, please create
+an issue on Github and we will do our best to help.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h2>
+<ul>
+<li>macOS 12.3 Monterey or later</li>
+<li>About 10GB of storage (and 10GB of data if your internet connection has data caps)</li>
+<li>Any M1 Macs or an Intel Macs with 4GB+ of VRAM (ideally more)</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
+<p>First you need to download a large checkpoint file.</p>
+<ol>
+<li>Sign up at <a href="https://huggingface.co">https://huggingface.co</a></li>
+<li>Go to the <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original">Stable diffusion diffusion model page</a></li>
+<li>Accept the terms and click Access Repository</li>
+<li>Download <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/blob/main/sd-v1-4.ckpt">sd-v1-4.ckpt (4.27 GB)</a> and note where you have saved it (probably the Downloads folder). You may want to move it somewhere else for longer term storage - SD needs this file to run.</li>
+</ol>
+<p>While that is downloading, open Terminal and run the following commands one at a time, reading the comments and taking care to run the appropriate command for your Mac's architecture (Intel or M1).</p>
+<div class="admonition todo">
+<p class="admonition-title">Homebrew</p>
+<p>If you have no brew installation yet (otherwise skip):</p>
+<div class="highlight"><span class="filename">install brew (and Xcode command line tools)</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+</div>
+<div class="admonition todo">
+<p class="admonition-title">Conda Installation</p>
+<p>Now there are two different ways to set up the Python (miniconda) environment:</p>
+<ol>
+<li>Standalone</li>
+<li>with pyenv</li>
+</ol>
+<p>If you don't know what we are talking about, choose Standalone. If you are familiar with python environments, choose "with pyenv"</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standalone</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Install cmake, protobuf, and rust</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew install cmake protobuf rust
+</code></pre></div>
+<p>Then clone the InvokeAI repository:</p>
+<p><code>bash title="Clone the InvokeAI repository:
+ # Clone the Invoke AI repo
+ git clone https://github.com/invoke-ai/InvokeAI.git
+ cd InvokeAI</code></p>
+</div>
+</div>
+</div>
+<p>Choose the appropriate architecture for your system and install miniconda:</p>
+<div class="highlight"><pre><span></span><code>=== &quot;M1 arm64&quot;
+
+    ```bash title=&quot;Install miniconda for M1 arm64&quot;
+    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh \
+      -o Miniconda3-latest-MacOSX-arm64.sh
+    /bin/bash Miniconda3-latest-MacOSX-arm64.sh
+    ```
+
+=== &quot;Intel x86_64&quot;
+
+    ```bash title=&quot;Install miniconda for Intel&quot;
+    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh \
+      -o Miniconda3-latest-MacOSX-x86_64.sh
+    /bin/bash Miniconda3-latest-MacOSX-x86_64.sh
+    ```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">with pyenv</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew install pyenv-virtualenv
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pyenv install anaconda3-2022.05
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pyenv virtualenv anaconda3-2022.05
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>pyenv activate anaconda3-2022.05
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition todo">
+<p class="admonition-title">Clone the Invoke AI repo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git clone https://github.com/invoke-ai/InvokeAI.git
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">cd</span> InvokeAI
+</code></pre></div>
+</div>
+<div class="admonition todo">
+<p class="admonition-title">Wait until the checkpoint-file download finished, then proceed</p>
+<p>We will leave the big checkpoint wherever you stashed it for long-term storage,
+and make a link to it from the repo's folder. This allows you to use it for
+other repos, or if you need to delete Invoke AI, you won't have to download it again.</p>
+<div class="annotate highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Make the directory in the repo for the symlink</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdir -p models/ldm/stable-diffusion-v1/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># This is the folder where you put the checkpoint file `sd-v1-4.ckpt`</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">PATH_TO_CKPT</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/Downloads&quot;</span> <span class="c1"># (1)!</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Create a link to the checkpoint</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>ln -s <span class="s2">&quot;</span><span class="nv">$PATH_TO_CKPT</span><span class="s2">/sd-v1-4.ckpt&quot;</span> models/ldm/stable-diffusion-v1/model.ckpt
+</code></pre></div>
+<ol>
+<li>replace <code>$HOME/Downloads</code> with the Location where you actually stored the Checkppoint (<code>sd-v1-4.ckpt</code>)</li>
+</ol>
+</div>
+<div class="admonition todo">
+<p class="admonition-title">Create the environment &amp; install packages</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">M1 Mac</label><label for="__tabbed_3_2">Intel x86_64 Mac</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-arm64 conda env create -f environment-mac.yml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-64 conda env create -f environment-mac.yml
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Activate the environment (you need to do this every time you want to run SD)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>conda activate invokeai
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># This will download some bits and pieces and make take a while</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="o">(</span>invokeai<span class="o">)</span> python scripts/preload_models.py
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Run SD!</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="o">(</span>invokeai<span class="o">)</span> python scripts/dream.py
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># or run the web interface!</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="o">(</span>invokeai<span class="o">)</span> python scripts/invoke.py --web
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># The original scripts should work as well.</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="o">(</span>invokeai<span class="o">)</span> python scripts/orig_scripts/txt2img.py <span class="se">\</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    --prompt <span class="s2">&quot;a photograph of an astronaut riding a horse&quot;</span> <span class="se">\</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    --plms
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>export PIP_EXISTS_ACTION=w</code> is a precaution to fix <code>conda env
+create -f environment-mac.yml</code> never finishing in some situations. So
+it isn't required but wont hurt.</p>
+</div>
+</div>
+<hr />
+<h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link">#</a></h2>
+<p>After you followed all the instructions and try to run invoke.py, you might
+get several errors. Here's the errors I've seen and found solutions for.</p>
+<h3 id="is-it-slow">Is it slow?<a class="headerlink" href="#is-it-slow" title="Permanent link">#</a></h3>
+<div class="highlight"><span class="filename">Be sure to specify 1 sample and 1 iteration.</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python ./scripts/orig_scripts/txt2img.py <span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  --prompt <span class="s2">&quot;ocean&quot;</span> <span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  --ddim_steps <span class="m">5</span> <span class="se">\</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  --n_samples <span class="m">1</span> <span class="se">\</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  --n_iter <span class="m">1</span>
+</code></pre></div>
+<hr />
+<h3 id="doesnt-work-anymore">Doesn't work anymore?<a class="headerlink" href="#doesnt-work-anymore" title="Permanent link">#</a></h3>
+<p>PyTorch nightly includes support for MPS. Because of this, this setup
+is inherently unstable. One morning I woke up and it no longer worked
+no matter what I did until I switched to miniforge. However, I have
+another Mac that works just fine with Anaconda. If you can't get it to
+work, please search a little first because many of the errors will get
+posted and solved. If you can't find a solution please <a href="https://github.com/invoke-ai/InvokeAI/issues">create an
+issue</a>.</p>
+<p>One debugging step is to update to the latest version of PyTorch nightly.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda install <span class="se">\</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  pytorch <span class="se">\</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  torchvision <span class="se">\</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  -c pytorch-nightly <span class="se">\</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  -n invokeai
+</code></pre></div>
+<p>If it takes forever to run <code>conda env create -f environment-mac.yml</code>, try this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git clean -f
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>conda clean <span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  --yes <span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  --all
+</code></pre></div>
+<p>Or you could try to completley reset Anaconda:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda update <span class="se">\</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  --force-reinstall <span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  -y <span class="se">\</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  -n base <span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  -c defaults conda
+</code></pre></div>
+<hr />
+<h3 id="no-module-named-cv2-torch-invokeai-transformers-taming-etc">"No module named cv2", torch, 'invokeai', 'transformers', 'taming', etc<a class="headerlink" href="#no-module-named-cv2-torch-invokeai-transformers-taming-etc" title="Permanent link">#</a></h3>
+<p>There are several causes of these errors:</p>
+<ol>
+<li>
+<p>Did you remember to <code>conda activate invokeai</code>? If your terminal prompt begins with
+   "(invokeai)" then you activated it. If it begins with "(base)" or something else
+   you haven't.</p>
+</li>
+<li>
+<p>You might've run <code>./scripts/preload_models.py</code> or <code>./scripts/invoke.py</code>
+   instead of <code>python ./scripts/preload_models.py</code> or
+   <code>python ./scripts/invoke.py</code>. The cause of this error is long so it's below.</p>
+<!-- I could not find out where the error is, otherwise would have marked it as a footnote -->
+</li>
+<li>
+<p>if it says you're missing taming you need to rebuild your virtual
+   environment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda deactivate
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>conda env remove -n invokeai
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>conda env create -f environment-mac.yml
+</code></pre></div>
+</li>
+<li>
+<p>If you have activated the invokeai virtual environment and tried rebuilding it,
+   maybe the problem could be that I have something installed that you don't and
+   you'll just need to manually install it. Make sure you activate the virtual
+   environment so it installs there instead of globally.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda activate invokeai
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>pip install &lt;package name&gt;
+</code></pre></div>
+</li>
+</ol>
+<p>You might also need to install Rust (I mention this again below).</p>
+<hr />
+<h3 id="how-many-snakes-are-living-in-your-computer">How many snakes are living in your computer?<a class="headerlink" href="#how-many-snakes-are-living-in-your-computer" title="Permanent link">#</a></h3>
+<p>You might have multiple Python installations on your system, in which case it's
+important to be explicit and consistent about which one to use for a given
+project. This is because virtual environments are coupled to the Python that
+created it (and all the associated 'system-level' modules).</p>
+<p>When you run <code>python</code> or <code>python3</code>, your shell searches the colon-delimited
+locations in the <code>PATH</code> environment variable (<code>echo $PATH</code> to see that list) in
+that order - first match wins. You can ask for the location of the first
+<code>python3</code> found in your <code>PATH</code> with the <code>which</code> command like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>% which python3
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>/usr/bin/python3
+</code></pre></div>
+<p>Anything in <code>/usr/bin</code> is
+<a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW6">part of the OS</a>.
+However, <code>/usr/bin/python3</code> is not actually python3, but rather a stub that
+offers to install Xcode (which includes python 3). If you have Xcode installed
+already, <code>/usr/bin/python3</code> will execute
+<code>/Library/Developer/CommandLineTools/usr/bin/python3</code> or
+<code>/Applications/Xcode.app/Contents/Developer/usr/bin/python3</code> (depending on which
+Xcode you've selected with <code>xcode-select</code>).</p>
+<p>Note that <code>/usr/bin/python</code> is an entirely different python - specifically,
+python 2. Note: starting in macOS 12.3, <code>/usr/bin/python</code> no longer exists.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>% which python3
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>/opt/homebrew/bin/python3
+</code></pre></div>
+<p>If you installed python3 with Homebrew and you've modified your path to search
+for Homebrew binaries before system ones, you'll see the above path.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>% which python
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>/opt/anaconda3/bin/python
+</code></pre></div>
+<p>If you have Anaconda installed, you will see the above path. There is a
+<code>/opt/anaconda3/bin/python3</code> also.</p>
+<p>We expect that <code>/opt/anaconda3/bin/python</code> and <code>/opt/anaconda3/bin/python3</code>
+should actually be the <em>same python</em>, which you can verify by comparing the
+output of <code>python3 -V</code> and <code>python -V</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">(</span>invokeai<span class="o">)</span> % which python
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>/Users/name/miniforge3/envs/invokeai/bin/python
+</code></pre></div>
+<p>The above is what you'll see if you have miniforge and correctly activated the
+invokeai environment, while usingd the standalone setup instructions above.</p>
+<p>If you otherwise installed via pyenv, you will get this result:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">(</span>anaconda3-2022.05<span class="o">)</span> % which python
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>/Users/name/.pyenv/shims/python
+</code></pre></div>
+<p>It's all a mess and you should know
+<a href="https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac">how to modify the path environment variable</a>
+if you want to fix it. Here's a brief hint of the most common ways you can
+modify it (don't really have the time to explain it all here).</p>
+<ul>
+<li>~/.zshrc</li>
+<li>~/.bash_profile</li>
+<li>~/.bashrc</li>
+<li>/etc/paths.d</li>
+<li>/etc/path</li>
+</ul>
+<p>Which one you use will depend on what you have installed, except putting a file
+in /etc/paths.d - which also is the way I prefer to do.</p>
+<p>Finally, to answer the question posed by this section's title, it may help to
+list all of the <code>python</code> / <code>python3</code> things found in <code>$PATH</code> instead of just the
+first hit. To do so, add the <code>-a</code> switch to <code>which</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>% which -a python3
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>...
+</code></pre></div>
+<p>This will show a list of all binaries which are actually available in your PATH.</p>
+<hr />
+<h3 id="debugging">Debugging?<a class="headerlink" href="#debugging" title="Permanent link">#</a></h3>
+<p>Tired of waiting for your renders to finish before you can see if it works?
+Reduce the steps! The image quality will be horrible but at least you'll get
+quick feedback.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>python ./scripts/txt2img.py <span class="se">\</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>  --prompt <span class="s2">&quot;ocean&quot;</span> <span class="se">\</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>  --ddim_steps <span class="m">5</span> <span class="se">\</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  --n_samples <span class="m">1</span> <span class="se">\</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>  --n_iter <span class="m">1</span>
+</code></pre></div>
+<hr />
+<h3 id="oserror-cant-load-tokenizer-for-openaiclip-vit-large-patch14">OSError: Can't load tokenizer for 'openai/clip-vit-large-patch14'<a class="headerlink" href="#oserror-cant-load-tokenizer-for-openaiclip-vit-large-patch14" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>python scripts/preload_models.py
+</code></pre></div>
+<hr />
+<h3 id="the-operator-name-is-not-current-implemented-for-the-mps-device-sic">"The operator [name] is not current implemented for the MPS device." (sic)<a class="headerlink" href="#the-operator-name-is-not-current-implemented-for-the-mps-device-sic" title="Permanent link">#</a></h3>
+<div class="admonition example">
+<p class="admonition-title">example error</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>... NotImplementedError: The operator <span class="s1">&#39;aten::_index_put_impl_&#39;</span> is not current
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>implemented <span class="k">for</span> the MPS device. If you want this op to be added <span class="k">in</span> priority
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>during the prototype phase of this feature, please comment on
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>https://github.com/pytorch/pytorch/issues/77764.
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>As a temporary fix, you can <span class="nb">set</span> the environment variable
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="sb">`</span><span class="nv">PYTORCH_ENABLE_MPS_FALLBACK</span><span class="o">=</span><span class="m">1</span><span class="sb">`</span> to use the CPU as a fallback <span class="k">for</span> this op.
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>WARNING: this will be slower than running natively on MPS.
+</code></pre></div>
+</div>
+<p>The InvokeAI version includes this fix in
+<a href="https://github.com/invoke-ai/InvokeAI/blob/main/environment-mac.yml">environment-mac.yml</a>.</p>
+<h3 id="could-not-build-wheels-for-tokenizers">"Could not build wheels for tokenizers"<a class="headerlink" href="#could-not-build-wheels-for-tokenizers" title="Permanent link">#</a></h3>
+<p>I have not seen this error because I had Rust installed on my computer before I
+started playing with Stable Diffusion. The fix is to install Rust.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>curl <span class="se">\</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  --proto <span class="s1">&#39;=https&#39;</span> <span class="se">\</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>  --tlsv1.2 <span class="se">\</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  -sSf https://sh.rustup.rs <span class="p">|</span> sh
+</code></pre></div>
+<hr />
+<h3 id="how-come-seed-doesnt-work">How come <code>--seed</code> doesn't work?<a class="headerlink" href="#how-come-seed-doesnt-work" title="Permanent link">#</a></h3>
+<p>First this:</p>
+<blockquote>
+<p>Completely reproducible results are not guaranteed across PyTorch releases,
+individual commits, or different platforms. Furthermore, results may not be
+reproducible between CPU and GPU executions, even when using identical seeds.</p>
+</blockquote>
+<p><a href="https://pytorch.org/docs/stable/notes/randomness.html">PyTorch docs</a></p>
+<p>Second, we might have a fix that at least gets a consistent seed sort of. We're
+still working on it.</p>
+<h3 id="libiomp5dylib-error">libiomp5.dylib error?<a class="headerlink" href="#libiomp5dylib-error" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>OMP: Error <span class="c1">#15: Initializing libiomp5.dylib, but found libomp.dylib already initialized.</span>
+</code></pre></div>
+<p>You are likely using an Intel package by mistake. Be sure to run conda with the
+environment variable <code>CONDA_SUBDIR=osx-arm64</code>, like so:</p>
+<p><code>CONDA_SUBDIR=osx-arm64 conda install ...</code></p>
+<p>This error happens with Anaconda on Macs when the Intel-only <code>mkl</code> is pulled in
+by a dependency.
+<a href="https://stackoverflow.com/questions/66224879/what-is-the-nomkl-python-package-used-for">nomkl</a>
+is a metapackage designed to prevent this, by making it impossible to install
+<code>mkl</code>, but if your environment is already broken it may not work.</p>
+<p>Do <em>not</em> use <code>os.environ['KMP_DUPLICATE_LIB_OK']='True'</code> or equivalents as this
+masks the underlying issue of using Intel packages.</p>
+<hr />
+<h3 id="not-enough-memory">Not enough memory<a class="headerlink" href="#not-enough-memory" title="Permanent link">#</a></h3>
+<p>This seems to be a common problem and is probably the underlying problem for a
+lot of symptoms (listed below). The fix is to lower your image size or to add
+<code>model.half()</code> right after the model is loaded. I should probably test it out.
+I've read that the reason this fixes problems is because it converts the model
+from 32-bit to 16-bit and that leaves more RAM for other things. I have no idea
+how that would affect the quality of the images though.</p>
+<p>See <a href="https://github.com/CompVis/stable-diffusion/issues/71">this issue</a>.</p>
+<hr />
+<h3 id="error-product-of-dimension-sizes-231">"Error: product of dimension sizes &gt; 2**31'"<a class="headerlink" href="#error-product-of-dimension-sizes-231" title="Permanent link">#</a></h3>
+<p>This error happens with img2img, which I haven't played with too much yet. But I
+know it's because your image is too big or the resolution isn't a multiple of
+32x32. Because the stable-diffusion model was trained on images that were 512 x
+512, it's always best to use that output size (which is the default). However,
+if you're using that size and you get the above error, try 256 x 256 or 512 x
+256 or something as the source image.</p>
+<p>BTW, 2**31-1 =
+<a href="https://en.wikipedia.org/wiki/2,147,483,647#In_computing">2,147,483,647</a>, which
+is also 32-bit signed <a href="https://en.wikipedia.org/wiki/C_data_types">LONG_MAX</a> in
+C.</p>
+<hr />
+<h3 id="i-just-got-rickrolled-do-i-have-a-virus">I just got Rickrolled! Do I have a virus?<a class="headerlink" href="#i-just-got-rickrolled-do-i-have-a-virus" title="Permanent link">#</a></h3>
+<p>You don't have a virus. It's part of the project. Here's
+<a href="https://github.com/invoke-ai/InvokeAI/blob/main/assets/rick.jpeg">Rick</a>
+and here's <a href="https://github.com/invoke-ai/InvokeAI/blob/69ae4b35e0a0f6ee1af8bb9a5d0016ccb27e36dc/scripts/txt2img.py#L79">the
+code</a>
+that swaps him in. It's a NSFW filter, which IMO, doesn't work very
+good (and we call this "computer vision", sheesh).</p>
+<hr />
+<h3 id="my-images-come-out-black">My images come out black<a class="headerlink" href="#my-images-come-out-black" title="Permanent link">#</a></h3>
+<p>We might have this fixed, we are still testing.</p>
+<p>There's a <a href="https://github.com/CompVis/stable-diffusion/issues/69">similar issue</a>
+on CUDA GPU's where the images come out green. Maybe it's the same issue?
+Someone in that issue says to use "--precision full", but this fork actually
+disables that flag. I don't know why, someone else provided that code and I
+don't know what it does. Maybe the <code>model.half()</code> suggestion above would fix
+this issue too. I should probably test it.</p>
+<h3 id="view-size-is-not-compatible-with-input-tensors-size-and-stride">"view size is not compatible with input tensor's size and stride"<a class="headerlink" href="#view-size-is-not-compatible-with-input-tensors-size-and-stride" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>File <span class="s2">&quot;/opt/anaconda3/envs/invokeai/lib/python3.10/site-packages/torch/nn/functional.py&quot;</span>, line <span class="m">2511</span>, <span class="k">in</span> layer_norm
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">return</span> torch.layer_norm<span class="o">(</span>input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled<span class="o">)</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>RuntimeError: view size is not compatible with input tensor<span class="err">&#39;</span>s size and stride <span class="o">(</span>at least one dimension spans across two contiguous subspaces<span class="o">)</span>. Use .reshape<span class="o">(</span>...<span class="o">)</span> instead.
+</code></pre></div>
+<p>Update to the latest version of invoke-ai/InvokeAI. We were
+patching pytorch but we found a file in stable-diffusion that we could
+change instead. This is a 32-bit vs 16-bit problem.</p>
+<h3 id="the-processor-must-support-the-intel-bla-bla-bla">The processor must support the Intel bla bla bla<a class="headerlink" href="#the-processor-must-support-the-intel-bla-bla-bla" title="Permanent link">#</a></h3>
+<p>What? Intel? On an Apple Silicon?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Intel MKL FATAL ERROR: This system does not meet the minimum requirements <span class="k">for</span> use of the Intel<span class="o">(</span>R<span class="o">)</span> Math Kernel Library. The processor must support the Intel<span class="o">(</span>R<span class="o">)</span> Supplemental Streaming SIMD Extensions <span class="m">3</span> <span class="o">(</span>Intel<span class="o">(</span>R<span class="o">)</span> SSSE3<span class="o">)</span> instructions. The processor must support the Intel<span class="o">(</span>R<span class="o">)</span> Streaming SIMD Extensions <span class="m">4</span>.2 <span class="o">(</span>Intel<span class="o">(</span>R<span class="o">)</span> SSE4.2<span class="o">)</span> instructions. The processor must support the Intel<span class="o">(</span>R<span class="o">)</span> Advanced Vector Extensions <span class="o">(</span>Intel<span class="o">(</span>R<span class="o">)</span> AVX<span class="o">)</span> instructions.
+</code></pre></div>
+<p>This is due to the Intel <code>mkl</code> package getting picked up when you try to install
+something that depends on it-- Rosetta can translate some Intel instructions but
+not the specialized ones here. To avoid this, make sure to use the environment
+variable <code>CONDA_SUBDIR=osx-arm64</code>, which restricts the Conda environment to only
+use ARM packages, and use <code>nomkl</code> as described above.</p>
+<hr />
+<h3 id="input-types-tensor2x1280xf32-and-tensorxf16-are-not-broadcast-compatible">input types 'tensor&lt;2x1280xf32&gt;' and 'tensor&lt;*xf16&gt;' are not broadcast compatible<a class="headerlink" href="#input-types-tensor2x1280xf32-and-tensorxf16-are-not-broadcast-compatible" title="Permanent link">#</a></h3>
+<p>May appear when just starting to generate, e.g.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>invoke&gt; clouds
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>Generating:   <span class="m">0</span>%<span class="p">|</span>                                                              <span class="p">|</span> <span class="m">0</span>/1 <span class="o">[</span><span class="m">00</span>:00&lt;?, ?it/s<span class="o">]</span>/Users/<span class="o">[</span>...<span class="o">]</span>/dev/stable-diffusion/ldm/modules/embedding_manager.py:152: UserWarning: The operator <span class="s1">&#39;aten::nonzero&#39;</span> is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. <span class="o">(</span>Triggered internally at /Users/runner/work/_temp/anaconda/conda-bld/pytorch_1662016319283/work/aten/src/ATen/mps/MPSFallback.mm:11.<span class="o">)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>  <span class="nv">placeholder_idx</span> <span class="o">=</span> torch.where<span class="o">(</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>                                                                                                    loc<span class="o">(</span><span class="s2">&quot;mps_add&quot;</span><span class="o">(</span><span class="s2">&quot;(mpsFileLoc): /AppleInternal/Library/BuildRoots/20d6c351-ee94-11ec-bcaf-7247572f23b4/Library/Caches/com.apple.xbs/Sources/MetalPerformanceShadersGraph/mpsgraph/MetalPerformanceShadersGraph/Core/Files/MPSGraphUtilities.mm&quot;</span>:219:0<span class="o">))</span>: error: input types <span class="s1">&#39;tensor&lt;2x1280xf32&gt;&#39;</span> and <span class="s1">&#39;tensor&lt;*xf16&gt;&#39;</span> are not broadcast compatible
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>LLVM ERROR: Failed to infer result type<span class="o">(</span>s<span class="o">)</span>.
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>Abort trap: <span class="m">6</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>/Users/<span class="o">[</span>...<span class="o">]</span>/opt/anaconda3/envs/invokeai/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be <span class="m">1</span> leaked semaphore objects to clean up at shutdown
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>  warnings.warn<span class="o">(</span><span class="s1">&#39;resource_tracker: There appear to be %d &#39;</span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 31, 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../INSTALL_LINUX/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Linux
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../INSTALL_WINDOWS/" class="md-footer__link md-footer__link--next" aria-label="Next: Windows" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Windows
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Lincoln D. Stein <lincoln.stein@gmail.com>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>
