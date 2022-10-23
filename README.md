@@ -2,7 +2,7 @@
 
 # InvokeAI: A Stable Diffusion Toolkit
 
-_Formally known as lstein/stable-diffusion_
+_Formerly known as lstein/stable-diffusion_
 
 ![project logo](docs/assets/logo.png)
 
@@ -42,7 +42,7 @@ generation process. It runs on Windows, Mac and Linux machines, with
 GPU cards with as little as 4 GB of RAM. It provides both a polished
 Web interface (see below), and an easy-to-use command-line interface.
 
-**Quick links**: [<a href="https://discord.gg/NwVCmKwY">Discord Server</a>] [<a href="https://invoke-ai.github.io/InvokeAI/">Documentation and Tutorials</a>] [<a href="https://github.com/invoke-ai/InvokeAI/">Code and Downloads</a>] [<a href="https://github.com/invoke-ai/InvokeAI/issues">Bug Reports</a>] [<a href="https://github.com/invoke-ai/InvokeAI/discussions">Discussion, Ideas & Q&A</a>]
+**Quick links**: [<a href="https://discord.gg/ZmtBAhwWhy">Discord Server</a>] [<a href="https://invoke-ai.github.io/InvokeAI/">Documentation and Tutorials</a>] [<a href="https://github.com/invoke-ai/InvokeAI/">Code and Downloads</a>] [<a href="https://github.com/invoke-ai/InvokeAI/issues">Bug Reports</a>] [<a href="https://github.com/invoke-ai/InvokeAI/discussions">Discussion, Ideas & Q&A</a>]
 
 <div align="center"><img src="docs/assets/invoke-web-server-1.png" width=640></div>
 
@@ -103,7 +103,7 @@ errors like 'expected type Float but found Half' or 'not implemented for Half'
 you can try starting `invoke.py` with the `--precision=float32` flag:
 
 ```bash
-(invokeai) ~/stable-diffusion$ python scripts/invoke.py --precision=float32
+(invokeai) ~/InvokeAI$ python scripts/invoke.py --precision=float32
 ```
 
 ### Features
@@ -165,7 +165,7 @@ you can try starting `invoke.py` with the `--precision=float32` flag:
   - Deprecated `--full_precision` / `-F`. Simply omit it and `invoke.py` will auto
     configure. To switch away from auto use the new flag like `--precision=float32`.
 
-For older changelogs, please visit the **[CHANGELOG](https://invoke-ai.github.io/InvokeAI/CHANGELOG/)**.
+For older changelogs, please visit the **[CHANGELOG](https://invoke-ai.github.io/InvokeAI/CHANGELOG#v114-11-september-2022)**.
 
 ### Troubleshooting
 
