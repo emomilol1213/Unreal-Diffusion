@@ -32,7 +32,7 @@ below.
 
 - #### [1] Follow the install instructions at [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) and get that running normally
 - #### [2] Copy the Unreal_Diffusion/Unreal_Diffusion folder into your unreal project's content folder
-- #### [3] Go to Editor Settings in unreal and then plugin/Python
+- #### [3] Go to Project Settings in unreal and then plugin/Python
 - #### [4] Navigate and add your content/Unreal_Diffusion/Python folder to the "Additional Paths" list
 - #### [4.1] Also add /Lib/site-packages from your python 3 install location on your computer like in the image below
 ![project logo](/unreal_diffusion/docs/python_paths.png)
