@@ -35,10 +35,10 @@ below.
 - #### [3] Go to Project Settings in unreal and then plugin/Python
 - #### [4] Navigate and add your content/Unreal_Diffusion/Python folder to the "Additional Paths" list
 - #### [4.1] Also add /Lib/site-packages from your python 3 install location on your computer like in the image below
-![project logo](/unreal_diffusion/docs/python_paths.png)
+![project logo](/Unreal/docs/python_paths.png)
 - #### [5] (Optional) Go to Editor Preferences in Unreal and then "Loading & Saving" 
 - #### [5.1] Add the "/outputs/img-samples/unreal-diffusion" to the Directories to monitor list to automatically import the generated images to unreal. You can map these to /Game/Unreal_Diffusion/Output as in the image below
-![project logo](/unreal_diffusion/docs/loading_saving.png) 
+![project logo](/Unreal/docs/loading_saving.png) 
 
 ### Running the plugin
 
@@ -54,9 +54,9 @@ First switch to the correct folder and conda environment and then start the serv
 ```
 
 Back in unreal, go to the Unreal Diffusion folder and find the "Unreal_Diffusion" Editor Utility Widget, right-click that and press "Run Editor Utility Widget as in the image below.
-![unreal start ui](/unreal_diffusion/docs/unreal_start_ui.png) 
+![unreal start ui](/Unreal/docs/unreal_start_ui.png) 
 This should start the UI which looks like this and you are ready to start generating images/textures
-![unreal ui](/unreal_diffusion/docs/unreal_ui.png) 
+![unreal ui](/Unreal/docs/unreal_ui.png) 
 
 ### Features
 
