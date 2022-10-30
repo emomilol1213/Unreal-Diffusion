@@ -79,7 +79,12 @@ Most docs here link to InvokeAI's as they are very detailed and show usecases an
 - [Variations(WIP)](https://invoke-ai.github.io/InvokeAI/features/VARIATIONS/)
 
 ### Latest Changes
-
+- v0.6.0 (30 October 2022)
+  - Added Img2Img support
+  - Cleaned up UI.
+  - Fixed reset button bugs.
+  - Added export of texture if source file not found.
+  - Added more sliders to UI
 - v0.5.0 (23 October 2022)
   - initial version with prompt/negative prompts, cfg, steps features
 
