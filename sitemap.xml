@@ -2,107 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/CHANGELOG/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/CLI/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/EMBIGGEN/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/IMG2IMG/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/INPAINTING/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/OTHER/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/OUTPAINTING/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/POSTPROCESS/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/PROMPTS/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/TEXTUAL_INVERSION/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/VARIATIONS/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/features/WEB/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/help/SAMPLER_CONVERGENCE/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/help/TROUBLESHOOT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/installation/INSTALL_DOCKER/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/installation/INSTALL_LINUX/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/installation/INSTALL_MAC/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/installation/INSTALL_WINDOWS/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/other/CONTRIBUTORS/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://invoke-ai.github.io/InvokeAI/other/README-CompViz/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
