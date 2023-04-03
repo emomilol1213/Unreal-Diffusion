@@ -1,6 +1,0 @@
--r requirements.txt
-
-protobuf==3.19.6
-torch
-torchvision
--e .
