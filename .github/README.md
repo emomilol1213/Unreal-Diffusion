@@ -112,5 +112,5 @@ This fork is at the moment handled by me, with the main features/backend API com
 For support, please use this repository's GitHub Issues tracking service. Feel free to send me an
 email if you use and like the plugin.
 
-Original portions of the software are Copyright (c) 2022
+Original portions of the software are Copyright (c) 2023
 [Emil Eldstål](https://github.com/emomilol1213)
