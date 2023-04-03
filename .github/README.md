@@ -60,6 +60,12 @@ Choose backend server and automatically launch it from the "Start Server" button
 - Realtime - toggle that will generate the images without freezing unreal, but may generate slower. Off by default
 - Seamless - Forces SD to generate seamless images. Sometimes you could try to have this off and instead type seamless in the prompt
 
+### Extra Features
+## DeepBump Texture Generation
+- If [DeepBump](https://github.com/HugoTini/DeepBump) is installed (optional), you will get extra options. This allows right-click action on any texture in the content browser for Normal/Height/Curvature map generation. This will generate those textures based on the diffuse map and import them to the project.
+![unreal image generation](/Unreal/docs/unreal_image_generation_deepbump.png)
+
+
 
 Most docs here link to InvokeAI's as they are very detailed and show usecases and syntax
 
