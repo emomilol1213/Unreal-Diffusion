@@ -1,7 +1,7 @@
 <div align="center">
 
 # Unreal Diffusion : A Stable Diffusion Unreal Engine Implementation
-![unreal-diffusion](/Unreal/docs/Unreal_DiffusionV0_5.png)
+![unreal-diffusion](/Unreal/docs/unreal_v0.8.png)
 
 [![discord badge]][discord link]
 
