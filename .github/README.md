@@ -9,10 +9,8 @@
 [discord link]: https://discord.gg/wg67wbA3aA
 </div>
 
-This is a fork of
-[invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI),
-a popular SD implementation with great features and GUI. It provides a streamlined
-GUI inside Unreal Engine to easily generate game-ready textures. 
+This is a Unreal Engine 5 implementation of Stable Diffusion. It provides a streamlined
+GUI inside Unreal Engine to easily generate game-ready textures among other features. You can run Automatic1111 or InvokeAI as the backend server.
 
 **Quick links**: [<a href="https://discord.gg/wg67wbA3aA">Discord Server</a>]
 
@@ -28,13 +26,16 @@ GUI inside Unreal Engine to easily generate game-ready textures.
 
 ### Installation
 
-This fork is supported across multiple platforms. You can find individual installation instructions
-below.
+This plugin supports several SD backends. You can find individual installation instructions
+below. Install Automatic1111 Stable Diffusion and/or InvokeAI
 
-- #### [1] Follow the install instructions at [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) and get that running normally
-- #### [2] Copy the Unreal/Unreal_Diffusion folder into your unreal project's content folder
-- #### [3] Go to Project Settings in unreal and then plugin/Python
-- #### [4] Navigate and add your content/Unreal_Diffusion/Python folder to the "Additional Paths" list
+- #### [1a] Follow the install instructions at [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) and get that running normally
+- #### [1b] Follow the install instructions at [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) and get that running normally (WIP, use the legacy_InvokeAI in the meantime before I add support for their new API)
+- #### [2] Copy the Unreal/Unreal_Diffusion folder into your Unreal plugin folder either for the project or the engine install location
+- #### [3] Go to Plugins in unreal and then enable the "Unreal Diffusion" plugin and restart the engine
+![plugin](/Unreal/docs/unreal_plugin.png)
+- #### [4] Navigate to project settings then add the install location of Automatic1111 and/or InvokeAI in the settings
+![editor settings](/Unreal/docs/unreal_plugin_settings.png)
 - #### [4.1] Also add /Lib/site-packages from your python 3 install location on your computer like in the image below
 ![project logo](/Unreal/docs/python_paths.png)
 - #### [5] (Optional) Go to Editor Preferences in Unreal and then "Loading & Saving" 
@@ -42,22 +43,14 @@ below.
 ![project logo](/Unreal/docs/loading_saving.png) 
 
 ### Running the plugin
+Launch the main UI from the playbar here:
+![unreal start ui](/Unreal/docs/unreal_button.png)
+Main ui:
+![unreal main ui](/Unreal/docs/unreal_main_ui.png)
 
-First switch to the correct folder and conda environment and then start the server. It should say "Point your browser at xxxxxxx" if launched succesfully
- ```bash
-(base) conda activate invokeai
-```
- ```bash
-(invokeai) cd C:\AI\Unreal-Diffusion (example, depending on where you cloned the repo)
-```
- ```bash
-(invokeai) python scripts/legacy_api.py --web --port 3333 -o outputs/img-samples/unreal-diffusion
-```
+Choose backend server and automatically launch it from the "Start Server" button. Make sure the plugin settings have the correct path
+![unreal settings ui](/Unreal/docs/unreal_settings.png)
 
-Back in unreal, go to the Unreal Diffusion folder and find the "Unreal_Diffusion" Editor Utility Widget, right-click that and press "Run Editor Utility Widget as in the image below.
-![unreal start ui](/Unreal/docs/unreal_start_ui.png) 
-This should start the UI which looks like this and you are ready to start generating images/textures
-![unreal ui](/Unreal/docs/unreal_ui.png) 
 
 ### Features
 
@@ -66,7 +59,6 @@ This should start the UI which looks like this and you are ready to start genera
 ### Unreal UI
 - Realtime - toggle that will generate the images without freezing unreal, but may generate slower. Off by default
 - Seamless - Forces SD to generate seamless images. Sometimes you could try to have this off and instead type seamless in the prompt
-
 
 
 Most docs here link to InvokeAI's as they are very detailed and show usecases and syntax
@@ -79,6 +71,12 @@ Most docs here link to InvokeAI's as they are very detailed and show usecases an
 - [Variations(WIP)](https://invoke-ai.github.io/InvokeAI/features/VARIATIONS/)
 
 ### Latest Changes
+- v0.8.0 (03 April 2023)
+  - Major rework
+  - Added support for Automatic1111 backend server
+  - Converted  from content to C++ plugin
+  - Moved config settings to plugin settings
+  - Adding WIP ChatGPT prompting support
 - v0.6.0 (30 October 2022)
   - Added Img2Img support
   - Cleaned up UI.
